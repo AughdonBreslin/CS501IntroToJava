@@ -1,4 +1,4 @@
-package ElementaryProgramming;
+package ElementaryProgramming_2;
 
 public class ComputeArea {
     public static void main(String[] args) {
