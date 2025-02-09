@@ -23,6 +23,14 @@ public class Person {
         return name;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void incAge() {
+        this.age++;
+    }
+
     public String toString() {
         return String.format("Person(%s, %d)", name, age);
     }
