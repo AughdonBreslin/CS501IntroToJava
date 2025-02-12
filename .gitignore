@@ -1,4 +1,6 @@
 # Ignore out/
 .idea/
 *.iml
+*.class
+Labs/*2.java
 out/

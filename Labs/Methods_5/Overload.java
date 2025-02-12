@@ -12,6 +12,10 @@ public class Overload {
         return (a > b) ? a : b;
     }
 
+//    public static String max(int a, int b) {
+//        return (a > b) ? a+"" : b+"";
+//    }
+
     public static char max(char a, char b) {
         return (a > b) ? a : b;
     }
