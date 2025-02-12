@@ -55,6 +55,5 @@ public class GuessBirthday {
             day += 16;
         }
         System.out.println("Your birthday: " +day+ "!");
-//        System.out.println(Integer.toBinaryString(day));
     }
 }
