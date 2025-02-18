@@ -46,5 +46,11 @@ public class Circle {
         System.out.println("Object count: " +Circle.objectCount);
         System.out.println(circle.getArea());
         System.out.println(specificCircle.getArea());
+
+        System.out.println(Circle.getObjectCount());
+
+        // generally not recommended, implies function is tied to instance
+        // compiler implicitly resolves this to Circle.getObjectCount()
+        System.out.println(circle.getObjectCount());
     }
 }

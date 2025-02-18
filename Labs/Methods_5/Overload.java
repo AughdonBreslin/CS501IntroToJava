@@ -12,31 +12,31 @@ public class Overload {
         return (a > b) ? a : b;
     }
 
-//    public static String max(int a, int b) {
-//        return (a > b) ? a+"" : b+"";
+    public static int max(char a, int b) {
+        return (a > b) ? a : b;
+    }
+
+//    public static int max(int a, char b) {
+//        return (a > b) ? a : b;
 //    }
 
-    public static char max(char a, char b) {
-        return (a > b) ? a : b;
-    }
-
-    public static double max(double a, double b) {
-        return (a > b) ? a : b;
-    }
+//    public static double max(double a, double b) {
+//        return (a > b) ? a : b;
+//    }
 
     public static void main(String[] args) {
         // Compiler tries to choose which to use.
         // Can get complicated, but tries to find function that most specifically fits the parameters.
         System.out.println(Overload.max(1, 2));
-        System.out.println(Overload.max((char)1, 2));
-        System.out.println(Overload.max((char)1, (char)2));
-
+//        System.out.println(Overload.max(1, (char)2));
+//        System.out.println(Overload.max((char)1, (char)2));
+//
         System.out.println(Overload.max('a', 'b'));
-        System.out.println(Overload.max((int)'a', 'b'));
-        System.out.println(Overload.max((int)'a', (int)'b'));
-
-        System.out.println(Overload.max(1.0, 2));
-        System.out.println(Overload.max(1, (double)2));
+//        System.out.println(Overload.max((int)'a', 'b'));
+//        System.out.println(Overload.max((int)'a', (int)'b'));
+//
+//        System.out.println(Overload.max(1.0, 2));
+//        System.out.println(Overload.max(1, (double)2));
 
     }
 }
