@@ -15,15 +15,15 @@ public class PassByValue {
         System.out.println("inside the inc function, num is: " +num);
     }
 
-    public static void inc(Person person) {
-        System.out.println(person);
-        person.incAge();
-    }
-
-    public static Person reset(Person person) {
-        person = new Person("Phil", 28);
-        return person;
-    }
+//    public static void inc(Person person) {
+//        System.out.println(person);
+//        person.incAge();
+//    }
+//
+//    public static Person reset(Person person) {
+//        person = new Person("Phil", 28);
+//        return person;
+//    }
 
     public static void main(String[] args) {
         int i = 5;
@@ -31,11 +31,11 @@ public class PassByValue {
         PassByValue.inc(i);
         System.out.println("i is still: " +i);
 
-        Person bob = new Person("Bob", 25);
-        PassByValue.inc(bob);
-        System.out.println(bob);
-
-        System.out.println(PassByValue.reset(bob));
-        System.out.println(bob);
+//        Person bob = new Person("Bob", 25);
+//        PassByValue.inc(bob);
+//        System.out.println(bob);
+//
+//        System.out.println(PassByValue.reset(bob));
+//        System.out.println(bob);
     }
 }

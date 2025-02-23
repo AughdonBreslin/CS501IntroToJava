@@ -21,7 +21,6 @@ public class Truck extends Vehicle {
     }
 
     // Overriding the displayInfo() method
-    @Override
     public void displayInfo() {
         super.displayInfo(); // Calls parent method
         System.out.println("I am a truck with number of Doors: " + numDoors);

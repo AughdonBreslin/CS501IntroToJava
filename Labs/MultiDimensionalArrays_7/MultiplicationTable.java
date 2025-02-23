@@ -27,14 +27,14 @@ public class MultiplicationTable {
         for (int r = 0; r < table.length; r++) {
             System.out.printf("%2d | ", r+1);
             for (int c = 0; c < table[r].length; c++) {
-                System.out.printf("%4d", (r+1)*(c+1));
+                System.out.printf("%4d", table[r][c]);
             }
             System.out.println();
         }
     }
 
     public static void main(String[] args) {
-        int[][] table = makeTable(15);
+        int[][] table = makeTable(20);
         printTable(table);
     }
 }
