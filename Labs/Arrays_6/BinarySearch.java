@@ -15,9 +15,9 @@ public class BinarySearch {
         while (low <= high) {
             int mid = low + (high - low)/2;
             if (list[mid] > elem) {
-                high = list[mid] - 1;
+                high = mid - 1;
             } else if (list[mid] < elem) {
-                low = list[mid] + 1;
+                low = mid + 1;
             } else {
                 return mid;
             }
@@ -27,8 +27,8 @@ public class BinarySearch {
     }
 
     public static void main(String[] args) {
-        int[] list = new int[]{0};
-        System.out.println(BinarySearch.binarySearch(list, 1));
+        int[] list = new int[]{0, 1, 2, 4, 7, 105, 610, 798987, 800000};
+        System.out.println(BinarySearch.binarySearch(list, 610));
 
 
     }

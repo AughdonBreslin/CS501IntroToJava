@@ -14,11 +14,12 @@ public class Swap {
         }
         System.out.println();
 
+        int temp = arr[0];
         arr[0] = arr[1];
-        arr[1] = arr[0];
+        arr[1] = temp;
 
-//        for (int num : arr) {
-//            System.out.print(num+ " ");
-//        }
+        for (int num : arr) {
+            System.out.print(num+ " ");
+        }
     }
 }

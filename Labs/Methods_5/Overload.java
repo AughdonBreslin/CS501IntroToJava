@@ -9,6 +9,7 @@ package Methods_5;
 public class Overload {
 
     public static int max(int a, int b) {
+        System.out.println("Int!");
         return (a > b) ? a : b;
     }
 
@@ -20,9 +21,15 @@ public class Overload {
 //        return (a > b) ? a : b;
 //    }
 
-//    public static double max(double a, double b) {
-//        return (a > b) ? a : b;
-//    }
+    public static char max(char a, char b) {
+        System.out.println("Char!");
+        return (a > b) ? a : b;
+    }
+
+    public static double max(double a, double b) {
+        System.out.println("double!");
+        return (a > b) ? a : b;
+    }
 
     public static void main(String[] args) {
         // Compiler tries to choose which to use.
