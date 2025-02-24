@@ -43,7 +43,8 @@ public class BankAccount {
             System.out.println("Invalid withdrawal amount.");
         }
     }
-
+}
+ class Main{
     public static void main(String[] args) {
         BankAccount myAccount = new BankAccount(1000);  // Encapsulated object
 
@@ -62,6 +63,6 @@ public class BankAccount {
         System.out.println("Final Balance: $" + myAccount.getBalance());
 
         // Trying to access balance directly (Not allowed)
-        // myAccount.balance = 5000;  // Compilation error: balance is private
+//         myAccount.balance = 5000;  // Compilation error: balance is private
     }
 }

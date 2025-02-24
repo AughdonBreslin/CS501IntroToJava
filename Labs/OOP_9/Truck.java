@@ -28,9 +28,9 @@ public class Truck extends Vehicle {
     }
 
     public static void main(String[] args) {
-        Car myCar = new Car("Toyota", 2022, 4); // Creating an instance of Car
+        Truck myTruck = new Truck("Toyota", 2022, 2); // Creating an instance of Car
 
-        myCar.displayInfo(); // Calls the overridden method
-        myCar.honk();        // Calls method specific to Car
+        myTruck.displayInfo(); // Calls the overridden method
+        myTruck.honk();        // Calls method specific to Car
     }
 }

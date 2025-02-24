@@ -8,7 +8,6 @@ package Objects_8;
  **/
 public class Circle {
 
-
     double radius = 1;
     static int objectCount = 0;
 
@@ -46,11 +45,11 @@ public class Circle {
         System.out.println("Object count: " +Circle.objectCount);
         System.out.println(circle.getArea());
         System.out.println(specificCircle.getArea());
-
+//
         System.out.println(Circle.getObjectCount());
 
         // generally not recommended, implies function is tied to instance
         // compiler implicitly resolves this to Circle.getObjectCount()
-        System.out.println(circle.getObjectCount());
+        System.out.println(specificCircle.getObjectCount());
     }
 }
