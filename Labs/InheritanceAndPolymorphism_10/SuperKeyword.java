@@ -31,11 +31,13 @@ class Sub extends Super {
         System.out.println("Sub constructor called");
     }
 
+    @Override
     public String getName() {
         System.out.println("Sub getName called");
         return super.getName() + "Sub";
     }
 
+    @Override
     public void setName(String name) {
         System.out.println("Sub setName called");
         super.setName(name + "Sub");
