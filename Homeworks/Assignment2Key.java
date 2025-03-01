@@ -246,24 +246,59 @@ public class Assignment2Key {
      * @param subarray The input 2D array
      * @return Boolean whether the subarray exists within the array
      */
+    /**
+     * Given a 3D array, check if it contains a given 2D subarray.
+     * @param array The 3D array to search in
+     * @param subarray The 2D subarray to search for
+     * @return true if the subarray is found, false otherwise
+     */
     public static boolean containsSubarray(int[][][] array, int[][] subarray) {
-        int subRows = subarray.length;
-        int subCols = subarray[0].length;
+        // Get dimensions
+        int depth = array.length;
+        if (depth == 0) return false;
 
-        for (int i = 0; i <= array.length - subRows; i++) {
-            for (int j = 0; j <= array[0].length - subCols; j++) {
-                if (matchesSubarray(array, subarray, i, j)) {
-                    return true;
+        int subarrayRows = subarray.length;
+        if (subarrayRows == 0) return true; // Empty subarray is always contained
+
+        int subarrayCols = subarray[0].length;
+        if (subarrayCols == 0) return true; // Empty subarray is always contained
+
+        // Check each 2D slice of the 3D array
+        for (int d = 0; d < depth; d++) {
+            int[][] slice = array[d];
+            int sliceRows = slice.length;
+
+            if (sliceRows < subarrayRows) continue; // Skip if slice is smaller than subarray
+            if (slice.length == 0) continue;
+
+            int sliceCols = slice[0].length;
+            if (sliceCols < subarrayCols) continue; // Skip if slice is smaller than subarray
+
+            // Check each possible starting position for the subarray within the slice
+            for (int i = 0; i <= sliceRows - subarrayRows; i++) {
+                for (int j = 0; j <= sliceCols - subarrayCols; j++) {
+                    if (isSubarrayAt(slice, subarray, i, j)) {
+                        return true;
+                    }
                 }
             }
         }
+
         return false;
     }
 
-    private static boolean matchesSubarray(int[][][] array, int[][] subarray, int startRow, int startCol) {
+    /**
+     * Helper method to check if a 2D subarray is present at a specific position within a 2D array
+     * @param array The 2D array to check
+     * @param subarray The 2D subarray to look for
+     * @param startRow The starting row position
+     * @param startCol The starting column position
+     * @return true if the subarray is found at the specified position, false otherwise
+     */
+    private static boolean isSubarrayAt(int[][] array, int[][] subarray, int startRow, int startCol) {
         for (int i = 0; i < subarray.length; i++) {
             for (int j = 0; j < subarray[0].length; j++) {
-                if (array[startRow + i][startCol + j][0] != subarray[i][j]) {
+                if (array[startRow + i][startCol + j] != subarray[i][j]) {
                     return false;
                 }
             }
@@ -272,13 +307,30 @@ public class Assignment2Key {
     }
 
     public static void main(String[] args) {
-        int[][] matrix = {
-                {1, 2, 3, 4},
-                {5, 6, 7, 8},
-                {9, 10, 11, 12}
-        };
-        for (int num : spiralPath(matrix)) {
-            System.out.printf("%2d ", num);
+        int[][][] array = new int[3][3][3];
+        System.out.println("Array:");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
+                for (int k = 0; k < array[0][0].length; k++) {
+                    array[i][j][k] = (i+2)*(j+1)*(k+1);
+                    System.out.print(array[i][j][k] + " ");
+                }
+                System.out.println();
+            }
+            System.out.println();
         }
+
+        System.out.println("Subarray");
+        int[][] subarray = new int[2][2];
+
+        for (int i = 0; i < subarray.length; i++) {
+            for (int j = 0; j < subarray[0].length; j++) {
+                subarray[i][j] = (i+2)*(j+2)*3;
+                System.out.print(subarray[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.printf("Does array contain subarray? %b", containsSubarray(array, subarray));
     }
 }

@@ -39,12 +39,12 @@ public class FileHandling {
         System.out.println("How many bytes? " + file.length());
         System.out.println("Can it be read from? " + file.canRead());
         System.out.println("Can it be written to? " + file.canWrite());
-        System.out.println("Is it a directory?" + file.isDirectory());
+        System.out.println("Is it a directory? " + file.isDirectory());
 
         String output = read(args[0], 100);
         System.out.println(output);
 
-        write(args[0], "Hello my name is Bob\nand I love Java.");
+        write(args[0], "Hello my name is Bill\nand I love Java.");
 
         output = read(args[0], 100);
         System.out.println(output);

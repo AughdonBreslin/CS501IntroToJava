@@ -7,7 +7,7 @@ package ErrorHandling_11;
  * @date: 2/22/2025, Saturday
  **/
 
-public class CustomException extends RuntimeException {
+public class CustomException extends Exception {
     public CustomException() {
         super();
     }
