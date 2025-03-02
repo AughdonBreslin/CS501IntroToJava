@@ -6,7 +6,7 @@ package Objects_8;
  * @description:
  * @created: 2/11/2025, Tuesday
  **/
-public class Circle {
+class Circle {
 
     double radius = 1;
     static int objectCount = 0;

@@ -8,6 +8,7 @@ import java.lang.annotation.Inherited;
  * @description:
  * @created: 3/1/2025, Saturday
  **/
+// Keyword abstract
 abstract class Animal {
     abstract void makeSound();
 
@@ -16,9 +17,10 @@ abstract class Animal {
     }
 }
 
+// Uses extends
 class Dog extends Animal {
     @Override
-     void makeSound() {
+    void makeSound() {
         System.out.println("Woof!");
     }
 }
