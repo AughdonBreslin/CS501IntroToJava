@@ -28,8 +28,14 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         int[] list = new int[]{0, 1, 2, 4, 7, 105, 610, 798987, 800000};
-        System.out.println(BinarySearch.binarySearch(list, 610));
-
-
+//        System.out.println(BinarySearch.binarySearch(list, 610));
+        for(int i = 0; i < list.length / 2; i++) {
+            int temp = list[i];
+            list[i] = list[list.length - 1 - i];
+            list[list.length - 1 - i] = temp;
+        }
+        for (int num : list) {
+            System.out.println(num);
+        }
     }
 }

@@ -40,5 +40,12 @@ public class Person {
         System.out.println(bob.toString());
         bob.setName("Bobby");
         System.out.println(bob.toString());
+        int i = 1;
+        int count = 0;
+        while (i < 20) {
+            System.out.println("WHILE!");
+            i += count;
+            count++;
+        }
     }
 }

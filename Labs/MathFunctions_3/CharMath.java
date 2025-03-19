@@ -8,8 +8,8 @@ package MathFunctions_3;
 **/
 public class CharMath {
     public static void main(String[] args) {
-        char a = 'a';
-        char b = 'b';
+        char a = '1';
+        char b = '2';
         System.out.printf("a: %c, b: %c\n", a, b);
         System.out.printf("(char)97: %c, (char)98: %c\n", (char)97, (char)98);
         System.out.printf("a+b: %c\n", a + b);
