@@ -1,5 +1,7 @@
 package Recursion_14;
 
+import java.time.Instant;
+
 /**
  * @author: aughb
  * @class: CS501 - Intro to Java
@@ -16,7 +18,11 @@ public class Fibonacci {
         // Recursive case (two calls)
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        Instant start = Instant.now();
+        fibonacci(300);
+        Instant end = Instant.now();
+        System.out.println(end.compareTo(start));
     }
 }
