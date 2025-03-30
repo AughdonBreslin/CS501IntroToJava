@@ -35,6 +35,11 @@ public class TimeComplexityExamples {
     }
 
     public static void main(String[] args) {
-
+        TimeComplexityExamples t = new TimeComplexityExamples();
+        int[] arr = new int[]{5, 1, 2, 4, 6, 9};
+        t.bubbleSort(arr);
+        for (int i : arr) {
+            System.out.println(i);
+        }
     }
 }

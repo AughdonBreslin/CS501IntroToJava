@@ -1,5 +1,7 @@
 package Recursion_14;
 
+import java.util.ArrayList;
+
 /**
  * @author: aughb
  * @class: CS501 - Intro to Java
@@ -7,16 +9,22 @@ package Recursion_14;
  * @created: 3/19/2025, Wednesday
  **/
 public class ReverseString {
-    public static String reverse(String str) {
+    public static ArrayList<Integer> function(ArrayList<Integer> nums) {
         // Base case
-        if (str.length() <= 1) {
-            return str;
+        if (nums.size() <= 1) {
+            return nums;
         }
 
         // Recursive case
-        return reverse(str.substring(1)) + str.charAt(0);
+        int num = nums.remove(0);
+        function(nums).add(num);
+        return nums;
     }
     public static void main(String[] args) {
-        System.out.println(reverse("Hello, world!"));
+        ArrayList<Integer> nums = new ArrayList<>();
+        for (int i : new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}) {
+            nums.add(i);
+        }
+        System.out.println(function(nums));
     }
 }

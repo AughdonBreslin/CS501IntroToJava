@@ -9,6 +9,7 @@ package Recursion_14;
 public class Factorial {
 
     public static int factorial(int n) {
+        System.out.println("im in the function!");
         // Base case
         if (n <= 1) {
             return 1;
@@ -19,6 +20,6 @@ public class Factorial {
     }
 
     public static void main(String[] args) {
-        System.out.println(factorial(5));
+        System.out.println(factorial(7));
     }
 }

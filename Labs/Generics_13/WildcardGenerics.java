@@ -51,11 +51,11 @@ public class WildcardGenerics {
         ArrayList<Integer> numbers = new ArrayList<>();
         numbers.add(100);
         numbers.add(13);
-
+//
         WildcardPrinter<Number> wildcardPrinter = new WildcardPrinter<>();
-
-        wildcardPrinter.printList(words);   // Works
-        wildcardPrinter.printList(numbers); // Works
+//
+//        wildcardPrinter.printList(words);   // Works
+//        wildcardPrinter.printList(numbers); // Works
 
         // Raw types can be passed in, as each element is treated as an Object
         //   similar to old way of implementation. Use caution!

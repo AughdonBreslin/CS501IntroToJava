@@ -145,10 +145,10 @@ public class Assignment2Key {
         int secondLargest = Integer.MIN_VALUE;
 
         for (int num : arr) {
-            if (num > largest) {
+            if (num >= largest) {
                 secondLargest = largest; // Update second largest
                 largest = num; // Update largest
-            } else if (num > secondLargest && num != largest) {
+            } else if (num > secondLargest) {
                 secondLargest = num;
             }
         }
@@ -179,6 +179,9 @@ public class Assignment2Key {
      * @return The rotated matrix
      */
     public static int[][] rotate90Clockwise(int[][] matrix) {
+        if (matrix.length == 0 || matrix[0].length == 0) {
+            return matrix;
+        }
         int rows = matrix.length;
         int cols = matrix[0].length;
         int[][] rotated = new int[cols][rows];
@@ -202,6 +205,9 @@ public class Assignment2Key {
      * @return The spiral path
      */
     public static int[] spiralPath(int[][] matrix) {
+        if (matrix.length == 0 || matrix[0].length == 0) {
+            return new int[]{};
+        }
         int top = 0, bottom = matrix.length - 1;
         int left = 0, right = matrix[0].length - 1;
         int[] path = new int[matrix.length*matrix[0].length];
@@ -304,33 +310,5 @@ public class Assignment2Key {
             }
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        int[][][] array = new int[3][3][3];
-        System.out.println("Array:");
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++) {
-                for (int k = 0; k < array[0][0].length; k++) {
-                    array[i][j][k] = (i+2)*(j+1)*(k+1);
-                    System.out.print(array[i][j][k] + " ");
-                }
-                System.out.println();
-            }
-            System.out.println();
-        }
-
-        System.out.println("Subarray");
-        int[][] subarray = new int[2][2];
-
-        for (int i = 0; i < subarray.length; i++) {
-            for (int j = 0; j < subarray[0].length; j++) {
-                subarray[i][j] = (i+2)*(j+2)*3;
-                System.out.print(subarray[i][j] + " ");
-            }
-            System.out.println();
-        }
-
-        System.out.printf("Does array contain subarray? %b", containsSubarray(array, subarray));
     }
 }

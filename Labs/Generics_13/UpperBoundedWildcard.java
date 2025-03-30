@@ -10,6 +10,17 @@ import java.util.List;
  * @date: 3/2/2025, Sunday
  **/
 public class UpperBoundedWildcard {
+
+    private static double sum(List<? extends Number> list)
+    {
+        double sum = 0.0;
+        for (Number i : list) {
+            sum += i.doubleValue();
+        }
+
+        return sum;
+    }
+
     public static void main(String[] args)
     {
 
@@ -26,13 +37,5 @@ public class UpperBoundedWildcard {
         System.out.print("Total sum is:" + sum(list2));
     }
 
-    private static double sum(List<? extends Number> list)
-    {
-        double sum = 0.0;
-        for (Number i : list) {
-            sum += i.doubleValue();
-        }
 
-        return sum;
-    }
 }
