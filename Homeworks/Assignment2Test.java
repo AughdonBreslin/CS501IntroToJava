@@ -13,7 +13,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Assignment2Test {
-    private final Assignment2Key test = new Assignment2Key();
+    private final Assignment2.Assignment2 test = new Assignment2.Assignment2();
 
 
     @BeforeAll
