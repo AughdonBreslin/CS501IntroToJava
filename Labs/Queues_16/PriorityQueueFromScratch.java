@@ -13,8 +13,6 @@ package Queues_16;
 public class PriorityQueueFromScratch<T extends Comparable<T>> {
     private static final int DEFAULT_CAPACITY = 10;
     private T[] heap;
-
-
     private int size;
 
     /**

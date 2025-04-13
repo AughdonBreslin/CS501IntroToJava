@@ -118,23 +118,34 @@ class PriorityScheduler {
             }
         }
 
-        // Continue until all processes complete
         while (completedProcesses < totalProcesses) {
             // Check for newly arrived processes
             checkForNewArrivals(processes);
 
-            // If CPU is idle, get next process from queue
-            if (currentProcess == null && !readyQueue.isEmpty()) {
-                currentProcess = readyQueue.poll();
-                int processIndex = Integer.parseInt(currentProcess.getId().substring(1)) - 1;
+            // Check if a higher priority process has arrived
+            if (!readyQueue.isEmpty()) {
+                PrioProcess highestPrioProcess = readyQueue.peek();
+                if (currentProcess == null ||
+                        highestPrioProcess.getPriority() < currentProcess.getPriority()) {
 
-                // Record response time (first time the process gets CPU)
-                if (responseTime[processIndex] == -1) {
-                    responseTime[processIndex] = currentTime - currentProcess.getArrivalTime();
+                    // Preempt current process if needed
+                    if (currentProcess != null) {
+                        readyQueue.add(currentProcess);
+                        System.out.println("Time " + currentTime + ": Process " + currentProcess.getId() +
+                                " preempted by higher priority process");
+                    }
+
+                    currentProcess = readyQueue.poll();
+                    int processIndex = Integer.parseInt(currentProcess.getId().substring(1)) - 1;
+
+                    // Record response time (first time the process gets CPU)
+                    if (responseTime[processIndex] == -1) {
+                        responseTime[processIndex] = currentTime - currentProcess.getArrivalTime();
+                    }
+
+                    System.out.println("Time " + currentTime + ": Process " + currentProcess.getId() +
+                            " (Priority: " + currentProcess.getPriority() + ") started execution");
                 }
-
-                System.out.println("Time " + currentTime + ": Process " + currentProcess.getId() +
-                        " (Priority: " + currentProcess.getPriority() + ") started execution");
             }
 
             // Execute current process for one time unit
@@ -145,10 +156,7 @@ class PriorityScheduler {
                 if (currentProcess.isCompleted()) {
                     int processIndex = Integer.parseInt(currentProcess.getId().substring(1)) - 1;
 
-                    // Calculate turnaround time (completion time - arrival time)
                     turnaroundTime[processIndex] = (currentTime + 1) - currentProcess.getArrivalTime();
-
-                    // Calculate waiting time (turnaround time - burst time)
                     waitingTime[processIndex] = turnaroundTime[processIndex] - currentProcess.getBurstTime();
 
                     System.out.println("Time " + (currentTime + 1) + ": Process " + currentProcess.getId() +
@@ -162,7 +170,6 @@ class PriorityScheduler {
 
             currentTime++;
 
-            // If CPU is idle and no process available, just advance time
             if (currentProcess == null && readyQueue.isEmpty() && completedProcesses < totalProcesses) {
                 System.out.println("Time " + currentTime + ": CPU idle, waiting for next process");
             }
