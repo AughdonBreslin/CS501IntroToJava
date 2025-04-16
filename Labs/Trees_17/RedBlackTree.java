@@ -19,12 +19,13 @@ class RedBlackTree<E extends Comparable<E>> {
     }
 
     private Node<E> insert(Node<E> node, E data) {
-        if (node == null) return new Node<>(data);
+        if (node == null) {
+            return new Node<>(data);
+        }
 
         if (data.compareTo(node.data) < 0) {
             node.left = insert(node.left, data);
-        }
-        else if (data.compareTo(node.data) > 0) {
+        } else if (data.compareTo(node.data) > 0) {
             node.right = insert(node.right, data);
         }
 
@@ -127,7 +128,9 @@ class RedBlackTree<E extends Comparable<E>> {
     }
 
     private Node<E> deleteMin(Node<E> node) {
-        if (node.left == null) return null;
+        if (node.left == null) {
+            return null;
+        }
 
         if (!isRed(node.left) && !isRed(node.left.left)) {
             node = moveRedLeft(node);
