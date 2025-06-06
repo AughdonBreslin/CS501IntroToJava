@@ -213,7 +213,7 @@ public class Assignment4Key {
     }
 
     /*
-     * Problem 9: Recursive Maze Solver: Given a 2D grid (0 = path, 1 = wall), write a recursive method to find is a path exists from the top-left to the bottom0-right corner.
+     * Problem 9: Recursive Maze Solver: Given a 2D grid (0 = path, 1 = wall), write a recursive method to find if a path exists from the top-left to the bottom-right corner.
      * @param maze the 2D grid
      * @param x the current x position
      * @param y the current y position
